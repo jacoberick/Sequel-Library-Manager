@@ -62,7 +62,7 @@ th {
 }
 
 tr {
-  min-height: 50px;
+  min-height: 25px;
 }
 
 tr:nth-child(2n) {
@@ -92,6 +92,7 @@ input {
 input[type="text"] {
   margin-left: 7px;
   width: 300px;
+  margin-bottom: 20px;
 }
 
 .error {

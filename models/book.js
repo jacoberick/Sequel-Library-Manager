@@ -13,8 +13,14 @@ module.exports = sequelize => {
         type: Sequelize.STRING,
         validate: { notEmpty: true }
       },
-      genre: Sequelize.STRING,
-      year: Sequelize.INTEGER
+      genre: {
+        type: Sequelize.STRING,
+        validate: { notEmpty: true }
+      },
+      year: {
+        type: Sequelize.INTEGER,
+        validate: { notEmpty: true }
+      }
     },
     { sequelize }
   );
