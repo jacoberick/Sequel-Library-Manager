@@ -20,6 +20,7 @@ input[type="submit"] {
   background: #019875;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   padding: 10px 14px 12px;
+  margin-bottom: 10px;
   font-size: 14px;
   border-radius: 2px;
   cursor: pointer;

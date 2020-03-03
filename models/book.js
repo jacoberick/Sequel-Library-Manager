@@ -7,19 +7,17 @@ module.exports = sequelize => {
     {
       title: {
         type: Sequelize.STRING,
-        validate: { notEmpty: true }
+        validate: { notEmpty: { msg: '"Title" is required' } }
       },
       author: {
         type: Sequelize.STRING,
-        validate: { notEmpty: true }
+        validate: { notEmpty: { msg: '"Author" is required' } }
       },
       genre: {
-        type: Sequelize.STRING,
-        validate: { notEmpty: true }
+        type: Sequelize.STRING
       },
       year: {
-        type: Sequelize.INTEGER,
-        validate: { notEmpty: true }
+        type: Sequelize.INTEGER
       }
     },
     { sequelize }
