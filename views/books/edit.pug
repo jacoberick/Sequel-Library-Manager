@@ -5,9 +5,8 @@ block content
   
   include errors
   
-  form(action="/books/" + book.id + "/edit", method="post")
-    include form
   form(action="/books/" + book.id + "/update", method="post")
+    include form
     input(type="submit" value='Update Entry')
   form(action='/books/' + book.id + '/delete', method='post')
     input(type='submit' value='Delete Entry')

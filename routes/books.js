@@ -32,6 +32,7 @@ router.get("/new", (req, res) => {
 router.post(
   "/",
   asyncHandler(async (req, res) => {
+    // validation
     const book = await Book.create(req.body);
     res.redirect("/books");
   })
@@ -51,18 +52,19 @@ router.get(
 );
 
 /* Update a book */
-// router.get(
-//   "/:id/update",
-//   asyncHandler(async (req, res) => {
-//     const book = await Book.findByPk(req.params.id);
-//     if (book) {
-//       await book.update(req.body);
-//       res.redirect("/");
-//     } else {
-//       res.sendStatus(404);
-//     }
-//   })
-// );
+router.post(
+  "/:id/update",
+  asyncHandler(async (req, res) => {
+    //validation
+    const book = await Book.findByPk(req.params.id);
+    if (book) {
+      await book.update(req.body);
+      res.redirect(`/books`);
+    } else {
+      res.sendStatus(404);
+    }
+  })
+);
 
 /* Delete Book Entry. */
 router.post(
