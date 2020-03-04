@@ -1,6 +1,8 @@
 extends layout
 
 block content
-  h1= "Sorry, the page you're looking for does not exist."
-  img(src=("../public/img/no-results.jpg"))
+  a(class='button error-button' href='../../') Go Back
+  h1(class='error-header')= "Server Error"
+  img(src=("../img/stranded.jpg") class='error-photo')
+  
  

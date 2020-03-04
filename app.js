@@ -24,7 +24,9 @@ app.use("/books", books);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  let err = new Error("Path is not found");
+  err.status = 404;
+  next(err);
 });
 
 // error handler
@@ -35,7 +37,13 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render("error");
+  if (err.status === 404) {
+    res.render("page-not-found");
+    console.log(`Something went wrong...${err.status}`);
+  } else if (err.status === 500) {
+    res.render("error");
+    console.log(`Something went wrong...${err.status}`);
+  }
 });
 
 module.exports = app;

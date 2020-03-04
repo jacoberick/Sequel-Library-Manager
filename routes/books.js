@@ -18,8 +18,7 @@ router.get(
   "/",
   asyncHandler(async (req, res) => {
     const books = await Book.findAll({ order: [["title", "ASC"]] });
-    console.log(books);
-    res.render("books/index", { books, title: "BOOKS" });
+    res.render("books/index", { books, title: "Book Index" });
   })
 );
 
@@ -30,7 +29,7 @@ router.get("/new", (req, res) => {
 
 /* POST create book */
 router.post(
-  "/",
+  "/new",
   asyncHandler(async (req, res) => {
     let book;
     try {
@@ -54,12 +53,14 @@ router.post(
 /* Edit book form */
 router.get(
   "/:id",
-  asyncHandler(async (req, res) => {
+  asyncHandler(async (req, res, next) => {
     const book = await Book.findByPk(req.params.id);
     if (book) {
       res.render("books/update-book", { book, title: "Edit Book Entry" });
     } else {
-      res.sendStatus(404);
+      let err = new Error("Book not found");
+      err.status = 500;
+      next(err);
     }
   })
 );

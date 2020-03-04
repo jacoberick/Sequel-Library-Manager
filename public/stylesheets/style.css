@@ -99,3 +99,18 @@ input[type="text"] {
 .error {
   color: rgb(236, 15, 15);
 }
+
+.error-photo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.error-header {
+  text-align: center;
+}
+
+.error-button {
+  text-align: center;
+}
