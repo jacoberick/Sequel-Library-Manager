@@ -1,5 +1,5 @@
 # Sequel-Library-Manager
-Treehouse Project 8
+A book library manager that utilizes CRUD operations to interact with the database.
 
 In the project directory, you can run:
 
